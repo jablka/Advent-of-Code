@@ -12,27 +12,21 @@ round_result = {
     'win' : 6
 }
 
-retazec="""
+data="""
 A Y
 B X
 C Z
 """
 
 with open('input.txt', encoding="utf-8") as f:
-    retazec = f.read()
+    data = f.read()
 
-mylist = retazec.strip().splitlines()
-
-new = []
-for e in mylist:
-    new.append(e.replace(' ', ''))
-
-new3 = []
-for e in new:
-    new3.append(tuple(e))
+data = data.strip().splitlines()
+data = [e.replace(' ', '') for e in data]
+data = [tuple(e) for e in data]
 
 score = []
-for e in new3:
+for e in data:
     if e[0]=='A':
         # print("A-Rock vs ", end='')
         if e[1]=='X':
@@ -91,7 +85,7 @@ print('Part1. Score summed:', sum(score))
 '''
 
 score = []
-for e in new3:
+for e in data:
     if e[0]=='A':
         # print("A-Rock vs ", end='')
         if e[1]=='X': # prehra
