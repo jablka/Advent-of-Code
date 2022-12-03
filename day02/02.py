@@ -12,12 +12,14 @@ round_result = {
     'win' : 6
 }
 
+# following is a test string in case you need it:
 data="""
 A Y
 B X
 C Z
 """
 
+# or get the data straight from the file:
 with open('input.txt', encoding="utf-8") as f:
     data = f.read()
 
