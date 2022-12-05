@@ -10,9 +10,9 @@ with open('input.txt', encoding="utf-8") as f:
 pocet_part1 = 0
 pocet_part2 = 0
 for elf in splitted_lines:
-    more_split = [ ]    
-    more_split.append(elf[0].split('-'))
-    more_split.append(elf[1].split('-'))
+    
+    # and again, using csv.reader to split, based on '-' delimiter
+    more_split = list(csv.reader(elf, delimiter='-'))
 
     rozsah1 = range( int(more_split[0][0]), int(more_split[0][1])+1 )
     rozsah2 = range( int(more_split[1][0]), int(more_split[1][1])+1 )
