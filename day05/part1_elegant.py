@@ -22,9 +22,7 @@ s_lines = data[0].splitlines()
 number_of_stacks = int(s_lines[-1][-2])
 
 # 'stacks' will be a list of lists
-stacks = [ ]
-for i in range(number_of_stacks):
-    stacks.append([ ])
+stacks = [ [] for i in range(number_of_stacks) ]
 
 # let's fill our stacks
 for riadok in s_lines:
