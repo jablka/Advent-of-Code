@@ -44,8 +44,7 @@ moves = data[1].strip().splitlines() # list of moves
 moves_mustra = [ ]
 for e in moves:
     najdene = re.findall('\d+', e)
-    pomocny = list(map(int, najdene)) # pomocny = [howmany, from, to]
-    moves_mustra.append(pomocny)
+    moves_mustra.append( list(map(int, najdene)) ) # [howmany, from, to]
 
 # ======================================
 # máme mustry: 'stacks' & 'mustra_moves'
@@ -61,12 +60,10 @@ for line in moves_mustra:
     _helper = [ ]
     howmany = line[0] # line[0] stands for 'how many'
     for h in range(howmany):
-        tt = stacks[line[1]-1].pop()
-        _helper.append(tt)
+        _helper.append( stacks[line[1]-1].pop() )
 
     for _h in range(len(_helper)):
-        ttt = _helper.pop()
-        stacks[line[2]-1].append(ttt)
+        stacks[line[2]-1].append( _helper.pop() )
 
 vysledok = ''
 for e in stacks:
